@@ -1,8 +1,4 @@
 package _04_class_and_object_java.bai_tap;
-
-
-
-
 import java.util.Scanner;
 
 public class ClassQuadraticEquation {
@@ -17,8 +13,6 @@ public class ClassQuadraticEquation {
         QuadraticEquation quadraticEquation = new QuadraticEquation(a,b,c);
         System.out.println(quadraticEquation.getResult());
     }
-
-
 }
 
 class QuadraticEquation {

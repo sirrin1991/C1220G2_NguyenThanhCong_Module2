@@ -11,7 +11,7 @@ public class HienThiHinh {
         System.out.println("2. Draw the triangle");
         System.out.println("3. Draw the isosceles triangle");
         System.out.println("4. Exit");
-        System.out.println("Nhập lựa chọn : ");
+        System.out.println("Input your choice : ");
 
         while (check) {
             int choice = scanner.nextInt();

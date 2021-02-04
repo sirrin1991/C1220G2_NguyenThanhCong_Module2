@@ -5,17 +5,17 @@ public class ClassFan {
     private final byte MEDIUM = 2;
     private final byte FAST = 3;
     private int speed = SLOW;
-    private boolean on = false;
+    private boolean isOn = false;
     private double radius = 5.0;
     private String color = "blue";
     public ClassFan (){
 
     }
-    public ClassFan(int speed,double radius,String color,boolean on){
+    public ClassFan(int speed,double radius,String color,boolean isOn){
         this.speed = speed;
         this.radius = radius;
         this.color = color;
-        this.on = on;
+        this.isOn = isOn;
     }
 
     public double getRadius() {
@@ -31,7 +31,7 @@ public class ClassFan {
     }
 
     public boolean isOn() {
-        return on;
+        return isOn;
     }
 
     public void setColor(String color) {
@@ -46,17 +46,17 @@ public class ClassFan {
         this.speed = speed;
     }
 //    public void setON(){
-//        if(this.on){
-//            this.on = false;
+//        if(this.isOn){
+//            this.isOn = false;
 //            System.out.println("Tắt quạt");
 //        }else {
-//            this.on = true;
+//            this.isOn = true;
 //            System.out.println("Bật quạt");
 //        }
 //    }
 
     public String toString() {
-        if (this.on) {
+        if (this.isOn) {
             return
                     "speed= " + this.speed +
                     ", radius= " + this.radius +

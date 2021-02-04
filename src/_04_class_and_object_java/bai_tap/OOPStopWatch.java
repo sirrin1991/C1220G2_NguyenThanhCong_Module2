@@ -18,7 +18,7 @@ public class OOPStopWatch {
     public static void main(String[] args) {
         int[] a = new int[100000];
         for (int i = 0; i < 100000; i++) {
-            a[i] = (int) (Math.random() * 1000);
+            a[i] = (int) (Math.random() * 100000);
         }
         LocalTime start = LocalTime.now();
         System.out.println("Start time : "+ start);
@@ -47,22 +47,24 @@ class StopWatch {
     }
 
     public LocalTime getStartTime() {
-        return startTime;
+        return this.startTime;
     }
 
     public LocalTime getEndTime() {
-        return endTime;
+        return this.endTime;
     }
 
     public void start() {
-        startTime = LocalTime.now();
+        this.startTime = LocalTime.now();
     }
 
     public void stop() {
-        endTime = LocalTime.now();
+        this.endTime = LocalTime.now();
     }
 
     public int getElapsedTime() {
-        return (((endTime.getHour() - startTime.getHour()) * 3600 + (endTime.getMinute() - startTime.getMinute()) * 60 + (endTime.getSecond() - startTime.getSecond())))*1000;
+        return (((this.endTime.getHour() - this.startTime.getHour()) * 3600 +
+                (this.endTime.getMinute() - this.startTime.getMinute()) * 60 +
+                (this.endTime.getSecond() - this.startTime.getSecond())))*1000;
     }
 }
