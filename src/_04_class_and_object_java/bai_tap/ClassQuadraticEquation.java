@@ -12,47 +12,50 @@ public class ClassQuadraticEquation {
         double c = scanner.nextDouble();
         QuadraticEquation quadraticEquation = new QuadraticEquation(a,b,c);
         System.out.println(quadraticEquation.getResult());
-    }
-}
-
-class QuadraticEquation {
-    private double a;
-    private double b;
-    private double c;
-
-    QuadraticEquation() {
 
     }
+    static class QuadraticEquation {
+        private double a;
+        private double b;
+        private double c;
 
-    QuadraticEquation(double a, double b, double c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-    }
+        QuadraticEquation() {
 
-    double getA() {
-        return a;
-    }
+        }
 
-    double getB() {
-        return b;
-    }
+        QuadraticEquation(double a, double b, double c) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
 
-    double getC() {
-        return c;
-    }
+        double getA() {
+            return a;
+        }
 
-    double getDiscriminant() {
-        return (this.b*this.b) - (4 * this.a * this.c);
-    }
-    String getResult() {
-        if (getDiscriminant() > 0) {
-            return "FirstRoot1 : " + (-this.b - Math.sqrt(getDiscriminant()) / (2 * this.a)) +
-                    " SecondRoot2 : " + (-this.b + Math.sqrt(getDiscriminant()) / (2 * this.a));
-        }else if ( getDiscriminant() == 0){
-            return ("FirstRoot1 = SecondRoot2 = " +(-this.b/(2*this.a)));
-        } else{
-            return "The equation has no solution !!";
+        double getB() {
+            return b;
+        }
+
+        double getC() {
+            return c;
+        }
+
+        double getDiscriminant() {
+            return (this.b*this.b) - (4 * this.a * this.c);
+        }
+        String getResult() {
+            if (getDiscriminant() > 0) {
+                return "FirstRoot1 : " + (-this.b - Math.sqrt(getDiscriminant()) / (2 * this.a)) +
+                        " SecondRoot2 : " + (-this.b + Math.sqrt(getDiscriminant()) / (2 * this.a));
+            }else if ( getDiscriminant() == 0){
+                return ("FirstRoot1 = SecondRoot2 = " +(-this.b/(2*this.a)));
+            } else{
+                return "The equation has no solution !!";
+            }
         }
     }
+
 }
+
+
