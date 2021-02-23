@@ -47,6 +47,8 @@ public class Point2D {
                 '}';
     }
 
+}
+class TestPoint2D{
     public static void main(String[] args) {
         Point2D n1 = new Point2D();
         n1.setX(3);

@@ -36,7 +36,8 @@ public class Circle {
                 + this.radius
                 + " And color is " + this.color;
     }
-
+}
+class TestCircle{
     public static void main(String[] args) {
         Circle c1 = new Circle();
         c1.setColor("red");

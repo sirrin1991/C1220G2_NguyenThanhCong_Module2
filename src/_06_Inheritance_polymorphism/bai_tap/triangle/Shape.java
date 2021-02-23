@@ -22,6 +22,8 @@ public class Shape {
                 + getColor() ;
     }
 
+}
+class TestShape{
     public static void main(String[] args) {
         Shape s1 = new Shape();
         s1.setColor("blue");

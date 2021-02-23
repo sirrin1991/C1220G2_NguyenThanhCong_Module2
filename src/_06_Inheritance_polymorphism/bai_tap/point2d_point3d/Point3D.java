@@ -42,6 +42,8 @@ public class Point3D extends Point2D {
                 '}';
     }
 
+}
+class TestPoint3D{
     public static void main(String[] args) {
         Point3D p1 = new Point3D(2,3,4);
         System.out.println(Arrays.toString(p1.getXY()));

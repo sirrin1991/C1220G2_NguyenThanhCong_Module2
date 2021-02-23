@@ -29,6 +29,8 @@ public class Cylinder extends Circle {
                 + super.toString();
     }
 
+}
+class TestCylinder{
     public static void main(String[] args) {
         Cylinder c1 = new Cylinder();
         c1.setRadius(3.0);

@@ -54,7 +54,8 @@ public class Triangle extends Shape {
                 ", and the perimeter is " + this.getPerimeter() +
                 ", which is a subclass of " + super.toString();
     }
-
+}
+class TestTriangle{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input a color of a triangle");

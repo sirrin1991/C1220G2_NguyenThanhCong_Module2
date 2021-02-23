@@ -55,6 +55,9 @@ public class MoveablePoint extends Point {
         return this;
     }
 
+
+}
+class TestMovealePoint{
     public static void main(String[] args) {
         MoveablePoint m1 = new MoveablePoint(3 ,4 ,5 ,6);
         System.out.println(m1.move());
