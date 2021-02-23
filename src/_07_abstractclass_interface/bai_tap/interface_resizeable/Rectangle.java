@@ -1,6 +1,6 @@
 package _07_abstractclass_interface.bai_tap.interface_resizeable;
 
-public class Rectangle implements Resizeable {
+public class Rectangle extends Shape implements Resizeable {
     private double width;
     private double length;
 
