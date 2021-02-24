@@ -19,7 +19,7 @@ public class TestStaticProperty {
         private String engine;
 
 
-        public static int numberOfCars;
+        public static int numberOfCars=0;
 
         public String getName() {
             return name;
