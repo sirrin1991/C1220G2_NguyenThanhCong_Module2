@@ -3,55 +3,57 @@ package _08_clean_code_and_refactoring.bai_tap;
 public class TennisGame {
 
     public static String getScore(String player1Name, String player2Name, int scoreOfPlayer1, int scoreOfPlayer2) {
-        String notification = "";
+        StringBuilder notification = new StringBuilder();
         int tempScore;
+        int numberOfPlayers = 2;
         boolean isEqual = (scoreOfPlayer1 == scoreOfPlayer2);
+        boolean checkScore = scoreOfPlayer1 >= 4 || scoreOfPlayer2 >= 4;
         if (isEqual) {
             switch (scoreOfPlayer1) {
                 case 0:
-                    notification = "Love-All";
+                    notification = new StringBuilder("Love-All");
                     break;
                 case 1:
-                    notification = "Fifteen-All";
+                    notification = new StringBuilder("Fifteen-All");
                     break;
                 case 2:
-                    notification = "Thirty-All";
+                    notification = new StringBuilder("Thirty-All");
                     break;
                 case 3:
-                    notification = "Forty-All";
+                    notification = new StringBuilder("Forty-All");
                     break;
                 default:
-                    notification = "Deuce";
+                    notification = new StringBuilder("Deuce");
             }
-        } else if (scoreOfPlayer1 >= 4 || scoreOfPlayer2 >= 4) {
+        } else if (checkScore) {
             int minusResult = scoreOfPlayer1 - scoreOfPlayer2;
-            if (minusResult == 1) notification = "Advantage player1";
-            else if (minusResult == -1) notification = "Advantage player2";
-            else if (minusResult >= 2) notification = "Win for player1";
-            else notification = "Win for player2";
+            if (minusResult == 1) notification = new StringBuilder("Advantage player1");
+            else if (minusResult == -1) notification = new StringBuilder("Advantage player2");
+            else if (minusResult > 1) notification = new StringBuilder("Win for player1");
+            else notification = new StringBuilder("Win for player2");
         } else {
-            for (int i = 1; i < 3; i++) {
+            for (int i = 1; i <= numberOfPlayers; i++) {
                 if (i == 1) tempScore = scoreOfPlayer1;
                 else {
-                    notification += "-";
+                    notification.append("-");
                     tempScore = scoreOfPlayer2;
                 }
                 switch (tempScore) {
                     case 0:
-                        notification += "Love";
+                        notification.append("Love");
                         break;
                     case 1:
-                        notification += "Fifteen";
+                        notification.append("Fifteen");
                         break;
                     case 2:
-                        notification += "Thirty";
+                        notification.append("Thirty");
                         break;
                     case 3:
-                        notification += "Forty";
+                        notification.append("Forty");
                         break;
                 }
             }
         }
-        return notification;
+        return notification.toString();
     }
 }
