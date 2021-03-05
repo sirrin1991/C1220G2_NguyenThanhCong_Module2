@@ -7,6 +7,11 @@ public class TestHashMapHashSet {
         Student student1 = new Student("Công",31,"Đà Nẵng");
         Student student2 = new Student("Huy",31,"Đà Nẵng");
         Student student3 = new Student("Sang",30,"Đà Nẵng");
+        Map<String,Student> map = new TreeMap<>();
+        map.put(student1.getName(),student1);
+//        map.put(student2,2);
+//        map.put(student3,3);
+
 //        studentHashMap.put(a,student1);
 //        studentHashMap.put(2,student2);
 //        studentHashMap.put(3,student3);
@@ -16,29 +21,30 @@ public class TestHashMapHashSet {
 //        studentHashMap.put(9,student2);
 //        studentHashMap.put(6,null);
 //        studentHashMap.put(10,null);
-        studentHashMap.put("a",student1);
-        studentHashMap.put("b",student2);
-        studentHashMap.put("c",student3);
-        studentHashMap.put("e",student3);
-        studentHashMap.put("f",student3);
-        studentHashMap.put("d",student1);
-        studentHashMap.put("M",student2);
-        studentHashMap.put("l",null);
-        studentHashMap.put("n",null);
-        studentHashSet.add(student1);
-        studentHashSet.add(student2);
-        studentHashSet.add(student3);
-        studentHashSet.add(student3);
-        studentHashSet.add(null);
-        studentHashSet.add(new Student("Tùng",28,"Đà Nẵg"));
-        studentHashSet.add(new Student("Tùng",55,"Đà Nẵg"));
-        for(HashMap.Entry<String, Student> student : studentHashMap.entrySet()){
-            System.out.println(student.toString());
-        }
-        System.out.println("------------");
-//        for(Student student: studentHashSet){
+//        studentHashMap.put("a",student1);
+//        studentHashMap.put("b",student2);
+//        studentHashMap.put("c",student3);
+//        studentHashMap.put("e",student3);
+//        studentHashMap.put("f",student3);
+//        studentHashMap.put("d",student1);
+//        studentHashMap.put("M",student2);
+//        studentHashMap.put("l",null);
+//        studentHashMap.put("n",null);
+//        studentHashSet.add(student1);
+//        studentHashSet.add(student2);
+//        studentHashSet.add(student3);
+//        studentHashSet.add(student3);
+//        studentHashSet.add(null);
+//        studentHashSet.add(new Student("Tùng",28,"Đà Nẵg"));
+//        studentHashSet.add(new Student("Tùng",55,"Đà Nẵg"));
+//        for(HashMap.Entry<String, Student> student : studentHashMap.entrySet()){
 //            System.out.println(student.toString());
 //        }
-        System.out.println(studentHashSet);
-    }
+//        System.out.println("------------");
+////        for(Student student: studentHashSet){
+////            System.out.println(student.toString());
+////        }
+//        System.out.println(studentHashSet);
+//    }
+}
 }

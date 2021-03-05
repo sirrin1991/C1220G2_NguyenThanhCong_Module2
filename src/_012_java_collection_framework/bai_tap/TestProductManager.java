@@ -1,8 +1,6 @@
 package _012_java_collection_framework.bai_tap;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class TestProductManager {
     public static void main(String[] args) {
@@ -17,39 +15,39 @@ public class TestProductManager {
         do {
             System.out.println("Input your choice");
             choice = scanner.nextInt();
-            if (choice < 1 || choice > 7) {
-                System.out.println("Error choosen");
-            } else {
-                switch (choice) {
-                    case 1:
-                        ProductManager.addProduct(productList);
-                        ProductManager.displayMenu();
-                        break;
-                    case 2:
-                        ProductManager.displayInformationList(productList);
-                        ProductManager.displayMenu();
-                        break;
-                    case 3:
-                        ProductManager.changeProductInformationById(productList);
-                        ProductManager.displayMenu();
-                        break;
-                    case 4:
-                        ProductManager.deleteProductById(productList);
-                        ProductManager.displayMenu();
-                        break;
-                    case 5:
-                        ProductManager.searchProductByName(productList);
-                        ProductManager.displayMenu();
-                        break;
-                    case 6:
-                        ProductManager.sortProductList(productList);
-                        ProductManager.displayMenu();
-                        break;
-                    case 7:
-                        System.out.println("bye bye");
-                        check = false ;
-                }
+            switch (choice) {
+                case 1:
+                    ProductManager.addProduct(productList);
+                    ProductManager.displayMenu();
+                    break;
+                case 2:
+                    ProductManager.displayInformationList(productList);
+                    ProductManager.displayMenu();
+                    break;
+                case 3:
+                    ProductManager.changeProductInformationById(productList);
+                    ProductManager.displayMenu();
+                    break;
+                case 4:
+                    ProductManager.deleteProductById(productList);
+                    ProductManager.displayMenu();
+                    break;
+                case 5:
+                    ProductManager.searchProductByName(productList);
+                    ProductManager.displayMenu();
+                    break;
+                case 6:
+                    ProductManager.sortProductList(productList);
+                    ProductManager.displayMenu();
+                    break;
+                case 7:
+                    System.out.println("Bye bye anh Trung");
+                    check = false;
+                    break;
+                default:
+                    System.out.println("Error Input");
             }
-        }while (check);
+        } while (check);
     }
 }
+

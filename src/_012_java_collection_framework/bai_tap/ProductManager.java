@@ -39,16 +39,16 @@ public class ProductManager{
         do {
             System.out.println("Choose the product's ID");
             displayInformationList(list);
-            choice = scanner.nextInt();
+            choice = Integer.parseInt(scanner.nextLine());
             for (Product product : list) {
                 if (choice == product.getId()) {
                     System.out.println("You want to change ? \n" +
                             "1.Name \n" +
                             "2.Price");
-                    int choice3 = scanner.nextInt();
+                    int choice3 = Integer.parseInt(scanner.nextLine());
                     if (choice3 == 1) {
                         System.out.println("New product's name is ");
-                        String newName = scanner.next();
+                        String newName = scanner.nextLine();
                         product.setName(newName);
                         check = false;
                         break;
@@ -96,7 +96,7 @@ public class ProductManager{
     public static void searchProductByName(List<Product> list) {
         System.out.println("Input a name");
         Scanner scanner = new Scanner(System.in);
-        String searchName = scanner.next();
+        String searchName = scanner.nextLine();
         boolean check = false;
         for (Product product : list) {
             if (searchName.equals(product.getName())) {
