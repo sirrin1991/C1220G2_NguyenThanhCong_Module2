@@ -2,7 +2,7 @@ package _15_exception_debug.bai_tap;
 
 import java.util.Scanner;
 
-public class IllegalTriangleException extends Throwable {
+public class IllegalTriangleException extends Exception {
     public static void main(String[] args) throws IllegalTriangleException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input a");

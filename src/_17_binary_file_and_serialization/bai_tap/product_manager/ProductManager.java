@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProductManager implements Serializable {
-    private final String PATH = "D:\\C1220G2_NguyenThanhCong_Module2\\src\\_17_binary_file_and_serialization\\bai_tap\\product_manager\\product.txt";
+    private final String PATH = "D:\\C1220G2_NguyenThanhCong_Module2\\src\\_17_binary_file_and_serialization\\bai_tap\\product_manager\\product.bin";
 
 
     public void addNewProduct() {

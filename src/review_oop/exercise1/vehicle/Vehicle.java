@@ -5,13 +5,14 @@ public class Vehicle {
     private int price;
     private int cc;
     private String name ;
-    private static float tax;
+    private float tax;
 
     public Vehicle(int price, int cubicCentimetre,String name) {
         this.price = price;
         this.cc = cubicCentimetre;
         this.name = name;
     }
+
 
     public Vehicle() {
     }
@@ -40,11 +41,11 @@ public class Vehicle {
         this.cc = cc;
     }
 
-    public static float getTax() {
+    public  float getTax() {
         return tax;
     }
 
-    public static void setTax(float taxx) {
+    public void setTax(float taxx) {
       tax = taxx;
     }
 
@@ -56,6 +57,6 @@ public class Vehicle {
                 '}';
     }
     public String getInfor() {
-        return  name + "," + price + "," + cc +","+ tax ;
+        return  price + "," + cc + "," + name +","+ tax ;
     }
 }

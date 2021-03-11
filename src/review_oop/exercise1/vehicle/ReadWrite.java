@@ -23,7 +23,6 @@ public class ReadWrite {
             e.printStackTrace();
         } finally {
             try {
-                fileWriter.close();
                 bufferedWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -31,20 +30,26 @@ public class ReadWrite {
         }
     }
 
-    static void read(List<Vehicle> list) {
+    static List<Vehicle> read() {
+        List<Vehicle> vehicleList = new ArrayList<>();
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
-
-        try {
+        try{
             fileReader = new FileReader("src\\review_oop\\exercise1\\vehicle\\Vehicle.csv");
             bufferedReader = new BufferedReader(fileReader);
 
-            String str ;
-            while ((str = bufferedReader.readLine()) != null){
-                printVehicle(parseCsvLine(str));
+            String line ;
+            String [] temp;
+            while ((line=bufferedReader.readLine())!=null){
+                temp = line.split(",");
+                Vehicle vehicle = new Vehicle();
+                vehicle.setPrice(Integer.parseInt(temp[0]));
+                vehicle.setCc(Integer.parseInt(temp[1]));
+                vehicle.setName(temp[2]);
+                vehicle.setTax(Float.parseFloat(temp[3]));
+                vehicleList.add(vehicle);
             }
-
-        } catch (IOException e) {
+        }catch (IOException e){
             e.printStackTrace();
         }finally {
             try {
@@ -53,19 +58,6 @@ public class ReadWrite {
                 e.printStackTrace();
             }
         }
-    }
-
-    static List<String> parseCsvLine(String csvLine) {
-        List<String> stringList = new ArrayList<>();
-        if(csvLine!=null){
-            String[] strings = csvLine.split(",");
-            Collections.addAll(stringList, strings);
-        }
-        return stringList;
-    }
-
-    static void printVehicle(List<String> vehicle){
-        System.out.println("Vehicle's name : " + vehicle.get(0)  +
-                ", price =" + vehicle.get(1) + ", cc=" + vehicle.get(2));
+        return vehicleList;
     }
 }

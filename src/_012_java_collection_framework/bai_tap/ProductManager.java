@@ -5,12 +5,12 @@ import java.util.*;
 public class ProductManager{
     public static void displayMenu() {
         System.out.println("Menu : \n" +
-                "1. Add a new product \n" +
+                "1. Add a new product.txt \n" +
                 "2. Product List \n" +
                 "3. Edit Information \n" +
-                "4. Delete the product \n" +
-                "5. Search the product \n" +
-                "6. Sort the product's list \n" +
+                "4. Delete the product.txt \n" +
+                "5. Search the product.txt \n" +
+                "6. Sort the product.txt's list \n" +
                 "7. Exit");
     }
 
@@ -18,7 +18,7 @@ public class ProductManager{
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input Product's name");
         String name = scanner.nextLine();
-        System.out.println("Input id of a product");
+        System.out.println("Input id of a product.txt");
         int id = scanner.nextInt();
         System.out.println("Input Product's price");
         double price = scanner.nextDouble();
@@ -37,7 +37,7 @@ public class ProductManager{
         int choice;
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.println("Choose the product's ID");
+            System.out.println("Choose the product.txt's ID");
             displayInformationList(list);
             choice = Integer.parseInt(scanner.nextLine());
             for (Product product : list) {
@@ -47,13 +47,13 @@ public class ProductManager{
                             "2.Price");
                     int choice3 = Integer.parseInt(scanner.nextLine());
                     if (choice3 == 1) {
-                        System.out.println("New product's name is ");
+                        System.out.println("New product.txt's name is ");
                         String newName = scanner.nextLine();
                         product.setName(newName);
                         check = false;
                         break;
                     } else if (choice3 == 2) {
-                        System.out.println("New product's price is ");
+                        System.out.println("New product.txt's price is ");
                         double newPrice = scanner.nextDouble();
                         product.setPrice(newPrice);
                         check = false;
@@ -76,7 +76,7 @@ public class ProductManager{
         int choice;
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.println("Choose the product's ID");
+            System.out.println("Choose the product.txt's ID");
             displayInformationList(list);
             choice = scanner.nextInt();
             for (int i = 0; i < list.size(); i++) {

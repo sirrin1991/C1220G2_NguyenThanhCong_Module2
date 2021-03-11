@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class VehicleManager {
+public class VehicleManager extends Vehicle {
 
     List<Vehicle> vehicleList = new ArrayList<>();
 
@@ -22,6 +22,7 @@ public class VehicleManager {
     }
 
     public void addVehicle(List<Vehicle> vehicleList) throws IOException {
+        List<Vehicle> vehicleList1 = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input the name of a motorcycle");
         String name = scanner.nextLine();
@@ -40,22 +41,30 @@ public class VehicleManager {
         System.out.println("Input the price of a motorcycle");
         int price = scanner.nextInt();
         getTax(cc, price);
-        vehicleList.add(new Vehicle(price, cc, name));
-        ReadWrite.write(vehicleList);
-        vehicleList.clear();
+        Vehicle vehicle = new Vehicle();
+        vehicle.setCc(cc);
+        vehicle.setName(name);
+        vehicle.setPrice(price);
+        vehicle.setTax(super.getTax());
+        vehicleList1.add(vehicle);
+        ReadWrite.write(vehicleList1);
+
     }
 
-    public void displayList(List<Vehicle> vehicleList) {
-        ReadWrite.read(vehicleList);
+    public void displayList() {
+        List<Vehicle> vehicleList = new ArrayList<>(ReadWrite.read());
+        for(Vehicle vehicle :vehicleList){
+            System.out.println(vehicle);
+        }
     }
 
     public void getTax(int cc, int price) {
         if (0 < cc && cc < 100) {
-            Vehicle.setTax((float) price / 100);
+            super.setTax((float) price / 100);
         } else if (cc < 200) {
-            Vehicle.setTax((float) price * 3 / 100);
+            super.setTax((float) price * 3 / 100);
         } else {
-            Vehicle.setTax((float) price * 5 / 100);
+            super.setTax((float) price * 5 / 100);
         }
     }
 
@@ -80,7 +89,7 @@ public class VehicleManager {
                     choice();
                     break;
                 case 2:
-                    displayList(vehicleList);
+                    displayList();
                     displayMainMenu();
                     choice();
                     break;
